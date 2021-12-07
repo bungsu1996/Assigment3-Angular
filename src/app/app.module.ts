@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/header/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -18,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
- 
+    NgbAccordion
   ],
   providers: [],
   bootstrap: [AppComponent]
