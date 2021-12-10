@@ -1,0 +1,78 @@
+#bg {
+  background: url('../../../assets/image/albarrmart.png'), no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+.container-fluid .row .box-rgs {
+  margin: auto;
+  position: relative;
+  top: 100px;
+  background-color: rgba(255, 255, 255, 0.94);
+  border-radius: 20px;
+}
+.container-fluid .row .box-rgs .set-1 {
+  margin: auto;
+}
+.container-fluid .row .box-rgs .set-1 .box-title {
+  margin: 0 10px auto;
+}
+.container-fluid .row .box-rgs .set-1 .box-title h1 {
+  text-align: center;
+  padding: 5px;
+  color: #5C7AEA;
+}
+.container-fluid .row .box-rgs .set-1 .box-title h1 span {
+  text-transform: uppercase;
+  color: white;
+  background-color: #5C7AEA;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.container-fluid .row .box-rgs .set-1 .box-regs .form-floating label .mrgn {
+  margin-right: 10px;
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+.container-fluid .row .box-rgs .set-1 .box-regs .form-floating span {
+  font-size: 13px;
+  margin-left: 5px;
+}
+.container-fluid .row .box-rgs .set-1 .box-regs .d-grid .btn {
+  background-color: #14279B;
+  border: none;
+}
+.container-fluid .row .box-rgs .set-1 .box-regs .d-grid .btn:hover {
+  background-color: #5C7AEA;
+}
+.container-fluid .row .box-rgs .set-1 .box-regs .login {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.container-fluid .row .box-rgs .set-1 .box-regs .login span {
+  font-size: 13px;
+}
+.container-fluid .row .box-rgs .set-1 .box-regs .login a {
+  text-decoration: none;
+  color: #14279B;
+  font-size: 13px;
+}
+.container-fluid .row .box-rgs .set-1 .box-regs .login a:hover {
+  color: #5C7AEA;
+}
+.container-fluid .row .box-rgs .set-1 .box-regs .about {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+.container-fluid .row .box-rgs .set-1 .box-regs .about a {
+  text-decoration: none;
+  color: #14279B;
+  font-size: 13px;
+  margin-right: 10px;
+}
+.container-fluid .row .box-rgs .set-1 .box-regs .about a:hover {
+  color: #5C7AEA;
+}

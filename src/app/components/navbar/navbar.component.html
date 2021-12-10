@@ -1,0 +1,82 @@
+<nav class="navBar">
+  <label class="logo">Al Barr Mart</label>
+  <ul id="barMenu">
+    <li><a routerLink="/albarrmart/home" routerLinkActive="active">Home</a></li>
+    <li>
+      <a routerLink="/albarrmart/product" routerLinkActive="active">Product</a>
+    </li>
+    <li>
+      <a routerLink="/albarrmart/about" routerLinkActive="active">About</a>
+    </li>
+    <li>
+      <a routerLink="/albarrmart/keranjang" routerLinkActive="active"
+        ><fa-icon [icon]="cart" class="cart"></fa-icon
+      ></a>
+    </li>
+    <li>
+      <a routerLink="/albarrmart/login" routerLinkActive="active"
+        ><fa-icon [icon]="login"></fa-icon><span class="login">Login</span></a
+      >
+    </li>
+    <li>
+      <a routerLink="/albarrmart/register" routerLinkActive="active"
+        ><fa-icon [icon]="registrasi"></fa-icon
+        ><span class="registrasi">Rsgister</span></a
+      >
+    </li>
+  </ul>
+  <label id="bars">
+    <fa-icon [icon]="bars" (click)="isShow()"></fa-icon>
+  </label>
+  <ul id="hiddenMenu" *ngIf="isDisplayHidden">
+    <li>
+      <a
+        routerLink="/albarrmart/home"
+        routerLinkActive="active"
+        (click)="menuColapse()"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/albarrmart/product"
+        routerLinkActive="active"
+        (click)="menuColapse()"
+        >Product</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/albarrmart/about"
+        routerLinkActive="active"
+        (click)="menuColapse()"
+        >About</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/albarrmart/keranjang"
+        routerLinkActive="active"
+        (click)="menuColapse()"
+        ><fa-icon [icon]="cart" class="cart"></fa-icon
+      ></a>
+    </li>
+    <li>
+      <a
+        routerLink="/albarrmart/login"
+        routerLinkActive="active"
+        (click)="menuColapse()"
+        ><fa-icon [icon]="login"></fa-icon><span class="login">Login</span></a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/albarrmart/register"
+        routerLinkActive="active"
+        (click)="menuColapse()"
+        ><fa-icon [icon]="registrasi"></fa-icon
+        ><span class="registrasi">Sign Up</span></a
+      >
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,65 @@
+<div class="container-fluid" id="bg">
+  <div class="row">
+    <div class="col-md-6 mt-5 box-rgs">
+      <div class="col-md-11 mt-5 set-1">
+        <div class="box-title">
+          <h1><span>Al Barr Mart</span> Register</h1>
+        </div>
+        <div class="box-regs">
+          <form [formGroup]="register" (ngSubmit)="isSubmit()">
+            <div class="form-floating mb-3 form-group">
+              <input
+                type="email"
+                class="form-control"
+                id="fullname"
+                placeholder="name@example.com"
+                formControlName="fullname"
+              />
+              <label for="floatingInput"
+                ><fa-icon [icon]="faUser" class="mrgn"></fa-icon>Fullname</label
+              >
+              <span *ngIf="!register.get('fullname')?.valid && register.get('fullname')?.touched">Please enter a valid fullname!</span>
+            </div>
+            <div class="form-floating mb-3 form-group">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="name@example.com"
+                formControlName="email"
+              />
+              <label for="floatingInput"
+                ><fa-icon [icon]="faEnvelope" class="mrgn"></fa-icon>Email
+                address</label
+              >
+              <span *ngIf="!register.get('email')?.valid && register.get('email')?.touched">Please enter a valid email!</span>
+            </div>
+            <div class="form-floating form-group">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                formControlName="password"
+              />
+              <label for="floatingPassword"
+                ><fa-icon [icon]="faKey" class="mrgn"></fa-icon>Password</label
+              >
+            </div>
+            <div class="d-grid gap-2 mt-3">
+              <button class="btn btn-primary" type="submit">Register</button>
+            </div>
+            <div class="cold-md-12 login">
+              <span>Have already an account ?</span><a routerLink="/albarrmart/login" routerLinkActive="active"> Login Here</a>
+            </div>
+            <div class="col-md-12 about">
+              <a routerLink="/albarrmart/about" routerLinkActive="active">About</a>
+              <a routerLink="/albarrmart/home" routerLinkActive="active">Home</a>
+            </div>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

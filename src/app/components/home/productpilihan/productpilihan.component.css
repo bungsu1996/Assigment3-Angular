@@ -1,0 +1,21 @@
+h1 {
+  color: black;
+  font-size: 25px;
+  border-bottom: 1px solid;
+}
+.container .row .card {
+  box-shadow: 1px 1px 1px black;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.container .row .card .card-body a {
+  font-size: 12px;
+  float: right;
+}
+.container .row .card .card-body a {
+  background-color: #14279B;
+  border: none;
+}
+.container .row .card .card-body a:hover {
+  background-color: #5C7AEA;
+}

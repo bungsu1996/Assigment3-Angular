@@ -1,0 +1,11 @@
+.set {
+  z-index: auto;
+}
+.mrgn{
+  margin-top: 90px;
+}
+.rds{
+  border-radius: 20px;
+  width: 90%;
+  margin: auto;
+}

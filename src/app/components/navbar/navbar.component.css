@@ -1,0 +1,111 @@
+nav{
+  width: 100%;
+  height: 80px;
+  background-color: #14279B;
+  position: fixed;
+  z-index: 1;
+}
+nav label.logo {
+  font-size: 35px;
+  font-weight: bold;
+  color: #F5F5F5;
+  padding: 0 50px;
+  line-height: 80px;
+}
+nav ul#barMenu {
+  list-style-type: none;
+  float: right;
+  margin-right: 40px;
+}
+nav ul#barMenu li {
+  display: inline-block;
+  margin: 0 10px;
+  line-height: 80px;
+}
+nav ul#barMenu li a {
+  text-decoration: none;
+  font-size: 12px;
+  color: #F5F5F5;
+  transition: .5s;
+  padding: 7px 10px;
+}
+nav ul#barMenu li a:hover {
+  color: #EC255A;
+}
+nav ul#barMenu li a span.login, span.registrasi {
+  margin-left: 5px;
+}
+nav label#bars {
+  color: white;
+  font-size: 25px;
+  line-height: 80px;
+  float: right;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+nav ul#hiddenMenu {
+  list-style-type: none;
+  float: right;
+  margin-right: 40px;
+  display: none;
+}
+nav ul#hiddenMenu li {
+  display: inline-block;
+  margin: 0 10px;
+  line-height: 80px;
+  display: none;
+}
+nav ul#hiddenMenu li a {
+  text-decoration: none;
+  font-size: 12px;
+  color: #F5F5F5;
+  transition: .5s all;
+  padding: 7px 10px;
+}
+nav ul#hiddenMenu li a:hover {
+  color: #EC255A;
+}
+nav ul#hiddenMenu li a span.login, span.registrasi {
+  margin-left: 5px;
+}
+
+@media (max-width: 1048px){
+  label.logo {
+    font-size: 35px;
+  }
+  nav ul#barMenu {
+    margin-right: 40px;
+  }
+}
+@media (max-width: 828px){
+  nav label#bars {
+    display: block;
+  }
+  nav ul#barMenu {
+    display: none;
+  }
+  nav ul#hiddenMenu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #5C7AEA;
+    top: 80px;
+    text-align: center;
+    display: block;
+    padding: 0;
+    z-index: 1;
+  }
+  nav ul#hiddenMenu li {
+    display: block;
+    border-bottom: 1px solid;
+  }
+  nav ul#hiddenMenu li a {
+    font-size: 15px;
+  }
+}
+@media (max-width: 400px){
+  label.logo {
+    font-size: 25px;
+  }
+}

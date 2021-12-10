@@ -1,0 +1,46 @@
+<div class="container-fluid" id="bg">
+  <div class="row">
+    <div class="col-md-6 mt-5 box-rgs">
+      <div class="col-md-11 mt-5 set-1">
+        <div class="box-title">
+          <h1><span>Al Barr Mart</span> Login</h1>
+        </div>
+        <div class="box-regs">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput"
+              ><fa-icon [icon]="faEnvelope" class="mrgn"></fa-icon>Email
+              address</label
+            >
+          </div>
+          <div class="form-floating">
+            <input
+              type="password"
+              class="form-control"
+              id="floatingPassword"
+              placeholder="Password"
+            />
+            <label for="floatingPassword"
+              ><fa-icon [icon]="faKey" class="mrgn"></fa-icon>Password</label
+            >
+          </div>
+          <div class="d-grid gap-2 mt-3">
+            <button class="btn btn-primary" type="button">Login</button>
+          </div>
+          <div class="cold-md-12 login">
+            <span>Can't Have Account ?</span><a routerLink="/albarrmart/register" routerLinkActive="active"> Register</a>
+          </div>
+          <div class="col-md-12 about">
+            <a routerLink="/albarrmart/about" routerLinkActive="active">About</a>
+            <a routerLink="/albarrmart/home" routerLinkActive="active">Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

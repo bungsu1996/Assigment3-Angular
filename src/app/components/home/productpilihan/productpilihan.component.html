@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h1>Kategori Product Pilihan</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="card" style="width: 13rem" *ngFor="let item of itemProduct">
+      <img src="{{ item.image }}" class="card-img-top" alt="" />
+      <div class="card-body">
+        <h3 class="card-title"><b>{{ item.title }}</b></h3>
+        <h5 class="card-text">
+          {{ item.price | currency: "IDR " }}
+        </h5>
+        <a href="#" class="btn btn-primary">+ Keranjang</a>
+      </div>
+    </div>
+  </div>
+</div>
