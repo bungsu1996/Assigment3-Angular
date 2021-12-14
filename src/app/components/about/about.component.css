@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Fuzzy+Bubbles&family=Italianno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Dancing+Script&family=Fuzzy+Bubbles&family=Italianno&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+.container-fluid {
+  background: url("../../../assets/image/23.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.container-fluid .about {
+  position: absolute;
+  top: 100px;
+}
+.container-fluid .about h1 {
+  font-size: 35px;
+  font-family: "Fuzzy Bubbles", cursive;
+  padding: 30px;
+}
+.container-fluid .about p {
+  padding: 0 30px;
+}
+.container-fluid .about h3 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+  text-align: right;
+  font-size: 25px;
+}
+.container-fluid .about a.mrgn {
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 12px;
+}

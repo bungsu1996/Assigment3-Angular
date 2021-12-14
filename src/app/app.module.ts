@@ -18,6 +18,7 @@ import { KeranjangComponent } from './components/keranjang/keranjang.component';
 import { ProductpilihanComponent } from './components/home/productpilihan/productpilihan.component';
 import { BannerComponent } from './components/home/banner/banner.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Productpilihan2Component } from './components/home/productpilihan2/productpilihan2.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     KeranjangComponent,
     ProductpilihanComponent,
     BannerComponent,
+    Productpilihan2Component,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +43,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FontAwesomeModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

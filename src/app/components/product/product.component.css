@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.start {
+  border: 1px solid;
+  top: 90px;
+  position: absolute;
+}
+.start .container {
+  margin: 0 auto;
+}
+.start .container h1 {
+  color: black;
+  font-size: 25px;
+  border-bottom: 1px solid;
+  text-align: center;
+}
+.start .container .row .card {
+  box-shadow: 1px 1px 1px black;
+  margin: 10px auto;
+}
+.start .container .row .card .card-body h3 {
+  text-align: center;
+}
+.start .container .row .card .card-body h3 .title-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+.start .container .row .card .card-body h5 {
+  text-align: center;
+}
+.start .container .row .card .card-body .btn {
+  background-color: #14279b;
+  border: none;
+  font-size: 13px;
+  padding: 5px;
+  float: right;
+  margin: 5px 5px 10px 0;
+}
+.start .container .row .card .card-body .btn:hover {
+  background-color: #5c7aea;
+}

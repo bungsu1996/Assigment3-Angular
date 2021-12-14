@@ -11,14 +11,20 @@
               <input
                 type="email"
                 class="form-control"
-                id="fullname"
+                id="username"
                 placeholder="name@example.com"
-                formControlName="fullname"
+                formControlName="username"
               />
               <label for="floatingInput"
-                ><fa-icon [icon]="faUser" class="mrgn"></fa-icon>Fullname</label
+                ><fa-icon [icon]="faUser" class="mrgn"></fa-icon>Username</label
               >
-              <span *ngIf="!register.get('fullname')?.valid && register.get('fullname')?.touched">Please enter a valid fullname!</span>
+              <span
+                *ngIf="
+                  !register.get('username')?.valid &&
+                  register.get('username')?.touched
+                "
+                >Please enter a valid username!</span
+              >
             </div>
             <div class="form-floating mb-3 form-group">
               <input
@@ -32,7 +38,13 @@
                 ><fa-icon [icon]="faEnvelope" class="mrgn"></fa-icon>Email
                 address</label
               >
-              <span *ngIf="!register.get('email')?.valid && register.get('email')?.touched">Please enter a valid email!</span>
+              <span
+                *ngIf="
+                  !register.get('email')?.valid &&
+                  register.get('email')?.touched
+                "
+                >Please enter a valid email!</span
+              >
             </div>
             <div class="form-floating form-group">
               <input
@@ -45,19 +57,32 @@
               <label for="floatingPassword"
                 ><fa-icon [icon]="faKey" class="mrgn"></fa-icon>Password</label
               >
+              <span
+                *ngIf="
+                  !register.get('password')?.valid &&
+                  register.get('password')?.touched
+                "
+                >Password must be less than 8 character!</span
+              >
             </div>
             <div class="d-grid gap-2 mt-3">
               <button class="btn btn-primary" type="submit">Register</button>
             </div>
-            <div class="cold-md-12 login">
-              <span>Have already an account ?</span><a routerLink="/albarrmart/login" routerLinkActive="active"> Login Here</a>
+            <div class="cold-md-12 register">
+              <span>Have already an account ?</span
+              ><a routerLink="/albarrmart/login" routerLinkActive="active">
+                Login Here</a
+              >
             </div>
             <div class="col-md-12 about">
-              <a routerLink="/albarrmart/about" routerLinkActive="active">About</a>
-              <a routerLink="/albarrmart/home" routerLinkActive="active">Home</a>
+              <a routerLink="/albarrmart/about" routerLinkActive="active"
+                >About</a
+              >
+              <a routerLink="/albarrmart/home" routerLinkActive="active"
+                >Home</a
+              >
             </div>
           </form>
-          
         </div>
       </div>
     </div>

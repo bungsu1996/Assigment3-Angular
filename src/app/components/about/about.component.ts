@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { faAddressBook, faBan } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-about',

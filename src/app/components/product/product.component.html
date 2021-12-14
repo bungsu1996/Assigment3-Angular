@@ -1,2 +1,48 @@
 <app-navbar></app-navbar>
-<p>product works!</p>
+<div class="container-fluid start">
+  <div class="container">
+    <h1>Product Kaos-Hoddie-Sweater Distro</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="card" style="width: 11rem" *ngFor="let itemCloths of productCloths">
+        <img
+          src="{{ itemCloths.imageItem }}"
+          class="card-img-top"
+          alt="Item Product Image"
+        />
+        <div class="card-body">
+          <h3 class="card-title p-1" style="height: 4rem">
+            <a class="title-link">{{ itemCloths.namaItem }}</a>
+          </h3>
+          <h5 class="card-text">{{ itemCloths.hargaItem | currency: "IDR " }}</h5>
+          <a routerLink class="btn btn-primary detail">+ Keranjang</a>
+          <a routerLink class="btn btn-primary">Lihat Detail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container mt-4">
+    <h1>Product Perkakas-Peralatan Rumah Tangga- Furniture</h1>
+  </div>
+  <div class="container mid">
+    <div class="row">
+      <div class="card" style="width: 11rem" *ngFor="let itemPerkakas of productPerkakas">
+        <img
+          src="{{ itemPerkakas.imageItem }}"
+          class="card-img-top"
+          alt="Item Product Image"
+        />
+        <div class="card-body">
+          <h3 class="card-title p-1" style="height: 4rem">
+            <a class="title-link">{{ itemPerkakas.namaItem }}</a>
+          </h3>
+          <h5 class="card-text">{{ itemPerkakas.hargaItem | currency: "IDR " }}</h5>
+          <a routerLink class="btn btn-primary detail">+ Keranjang</a>
+          <a routerLink class="btn btn-primary">Lihat Detail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

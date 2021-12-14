@@ -1,5 +1,5 @@
 #bg {
-  background: url('../../../assets/image/albarrmart.png'), no-repeat;
+  background: url('../../../assets/image/albarrmart3.png'), no-repeat;
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -33,6 +33,13 @@
 .container-fluid .row .box-rgs .set-1 .box-regs .form-floating label .mrgn {
   margin-right: 10px;
 }
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+.container-fluid .row .box-rgs .set-1 .box-regs .form-floating span {
+  font-size: 13px;
+  margin-left: 5px;
+}
 .container-fluid .row .box-rgs .set-1 .box-regs .d-grid .btn {
   background-color: #14279B;
   border: none;
@@ -48,7 +55,6 @@
   font-size: 13px;
 }
 .container-fluid .row .box-rgs .set-1 .box-regs .login a {
-  text-decoration: none;
   color: #14279B;
   font-size: 13px;
 }

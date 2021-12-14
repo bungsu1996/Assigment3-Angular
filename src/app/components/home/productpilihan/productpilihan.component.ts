@@ -14,28 +14,28 @@ export class ProductpilihanComponent implements OnInit {
       price: 2500
     },
     {
-      image: '../../../../assets/image/product/idm-1.png',
+      image: '../../../../assets/image/product/idm-3.png',
       title: 'Indomie Rasa Ayam Bawang',
       price: 2500
     },
     {
-      image: '../../../../assets/image/product/idm-1.png',
-      title: 'Indomie Rasa Soto Lamongan',
+      image: '../../../../assets/image/product/idm-2.png',
+      title: 'Indomie Goreng Fried Noodles',
       price: 2500
     },
     {
-      image: '../../../../assets/image/product/idm-1.png',
-      title: 'Indomie Rasa Soto Lamongan',
+      image: '../../../../assets/image/product/idm-4.png',
+      title: 'Indomie Goreng Mie Aceh',
       price: 2500
     },
     {
-      image: '../../../../assets/image/product/idm-1.png',
-      title: 'Indomie Rasa Soto Lamongan',
+      image: '../../../../assets/image/product/idm-5.png',
+      title: 'Indomie Goreng Cabe Ijo',
       price: 2500
     },
     {
-      image: '../../../../assets/image/product/idm-1.png',
-      title: 'Indomie Rasa Soto Lamongan',
+      image: '../../../../assets/image/product/idm-6.png',
+      title: 'Indomie Rasa Soto Spesial',
       price: 2500
     },
   ]

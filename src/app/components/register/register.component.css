@@ -47,19 +47,18 @@ input.ng-invalid.ng-touched {
 .container-fluid .row .box-rgs .set-1 .box-regs .d-grid .btn:hover {
   background-color: #5C7AEA;
 }
-.container-fluid .row .box-rgs .set-1 .box-regs .login {
+.container-fluid .row .box-rgs .set-1 .box-regs form .register {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-.container-fluid .row .box-rgs .set-1 .box-regs .login span {
+.container-fluid .row .box-rgs .set-1 .box-regs form .register span {
   font-size: 13px;
 }
-.container-fluid .row .box-rgs .set-1 .box-regs .login a {
-  text-decoration: none;
+.container-fluid .row .box-rgs .set-1 .box-regs .register a {
   color: #14279B;
   font-size: 13px;
 }
-.container-fluid .row .box-rgs .set-1 .box-regs .login a:hover {
+.container-fluid .row .box-rgs .set-1 .box-regs .register a:hover {
   color: #5C7AEA;
 }
 .container-fluid .row .box-rgs .set-1 .box-regs .about {
