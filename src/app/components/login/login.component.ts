@@ -1,6 +1,9 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
+import { NgxSpinnerService } from "ngx-spinner"
 
 @Component({
   selector: 'app-login',
@@ -10,18 +13,30 @@ import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
 export class LoginComponent implements OnInit {
   faEnvelope = faEnvelope;
   faKey = faKey;
-  login!: FormGroup;
+  userIsAuthenticated = false;
 
-  constructor() {}
+  constructor(private authService: AuthService, private location: Location, private spinner: NgxSpinnerService) {}
 
   ngOnInit(): void {
-    this.login = new FormGroup({
-      email: new FormControl(null, Validators.required),
-      password: new FormControl(null, Validators.required),
-    });
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
+    this.authService.getAuthStatusListener().subscribe((isAuthenticated) => {
+      this.userIsAuthenticated = isAuthenticated
+    })
   }
 
-  isSubmit() {
-    console.log(this.login);
+  onLogin(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    this.authService.login(form.value.Email, form.value.Password);
   }
+
+  goBack(): void{
+    this.location.back();
+  }
+
+
 }

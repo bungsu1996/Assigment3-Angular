@@ -19,6 +19,10 @@ import { ProductpilihanComponent } from './components/home/productpilihan/produc
 import { BannerComponent } from './components/home/banner/banner.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Productpilihan2Component } from './components/home/productpilihan2/productpilihan2.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { DetailproductComponent } from './components/product/detailproduct/detailproduct.component';
 
 @NgModule({
   declarations: [
@@ -35,17 +39,26 @@ import { Productpilihan2Component } from './components/home/productpilihan2/prod
     ProductpilihanComponent,
     BannerComponent,
     Productpilihan2Component,
+    DetailproductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
     NgbModule,
-    FormsModule,
-    ReactiveFormsModule,
+    HttpClientModule,
+    NgxSpinnerModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -4,12 +4,12 @@
 
 <div class="container">
   <div class="row">
-    <div class="card" style="width: 13rem" *ngFor="let item of itemProduct">
-      <img src="{{ item.image }}" class="card-img-top" alt="" />
+    <div class="card" style="width: 13rem" *ngFor="let products of productPilihan">
+      <img src="{{ products.Foto_Item }}" class="card-img-top" alt="" />
       <div class="card-body">
-        <h3 class="card-title"><b>{{ item.title }}</b></h3>
+        <h3 class="card-title" style="height: 4rem"><b>{{ products.Nama_Item }}</b></h3>
         <h5 class="card-text">
-          {{ item.price | currency: "IDR " }}
+          {{ products.Harga_Item | currency: "IDR "}}
         </h5>
         <a href="#" class="btn btn-primary">+ Keranjang</a>
       </div>

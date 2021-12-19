@@ -13,12 +13,17 @@
         ><fa-icon [icon]="cart" class="cart"></fa-icon
       ></a>
     </li>
-    <li>
+    <li *ngIf="!userIsAuthenticated">
       <a routerLink="/albarrmart/login" routerLinkActive="active"
         ><fa-icon [icon]="login"></fa-icon><span class="login">Login</span></a
       >
     </li>
-    <li>
+    <li *ngIf="userIsAuthenticated">
+      <a (click)="isLogout()"
+        ><fa-icon [icon]="login"></fa-icon><span class="logout">Logout</span></a
+      >
+    </li>
+    <li *ngIf="!userIsAuthenticated">
       <a routerLink="/albarrmart/register" routerLinkActive="active"
         ><fa-icon [icon]="registrasi"></fa-icon
         ><span class="registrasi">Register</span></a
@@ -61,7 +66,7 @@
         ><fa-icon [icon]="cart" class="cart"></fa-icon
       ></a>
     </li>
-    <li>
+    <li *ngIf="!userIsAuthenticated">
       <a
         routerLink="/albarrmart/login"
         routerLinkActive="active"
@@ -69,13 +74,21 @@
         ><fa-icon [icon]="login"></fa-icon><span class="login">Login</span></a
       >
     </li>
-    <li>
+    <li *ngIf="userIsAuthenticated">
+      <a
+        routerLink="/albarrmart/login"
+        routerLinkActive="active"
+        (click)="menuColapse()"
+        ><fa-icon [icon]="login"></fa-icon><span class="logout">Logout</span></a
+      >
+    </li>
+    <li *ngIf="!userIsAuthenticated">
       <a
         routerLink="/albarrmart/register"
         routerLinkActive="active"
         (click)="menuColapse()"
         ><fa-icon [icon]="registrasi"></fa-icon
-        ><span class="registrasi">Sign Up</span></a
+        ><span class="registrasi">Register</span></a
       >
     </li>
   </ul>

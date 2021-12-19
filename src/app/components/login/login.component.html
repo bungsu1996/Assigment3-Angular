@@ -1,3 +1,12 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="large"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Please Wait..</p>
+</ngx-spinner>
+
 <div class="container-fluid" id="bg">
   <div class="row">
     <div class="col-md-6 mt-5 box-rgs">
@@ -6,25 +15,18 @@
           <h1><span>Al Barr Mart</span> Login</h1>
         </div>
         <div class="box-regs">
-          <form [formGroup]="login" (ngSubmit)="isSubmit()">
+          <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
             <div class="form-floating mb-3 form-group">
               <input
                 type="email"
                 class="form-control"
                 id="email"
-                placeholder="name@example.com"
-                formControlName="email"
+                ngModel
+                name="Email" required Email
               />
               <label for="floatingInput"
                 ><fa-icon [icon]="faEnvelope" class="mrgn"></fa-icon>Email
                 address</label
-              >
-              <span
-                *ngIf="
-                  !login.get('email')?.valid &&
-                  login.get('email')?.touched
-                "
-                >Please enter a valid email!</span
               >
             </div>
             <div class="form-floating form-group">
@@ -32,22 +34,15 @@
                 type="password"
                 class="form-control"
                 id="password"
-                placeholder="Password"
-                formControlName="password"
+                ngModel
+                name="Password" required
               />
               <label for="floatingPassword"
                 ><fa-icon [icon]="faKey" class="mrgn"></fa-icon>Password</label
               >
-              <span
-              *ngIf="
-                !login.get('password')?.valid &&
-                login.get('password')?.touched
-              "
-              >Please enter a valid password!</span
-            >
             </div>
             <div class="d-grid gap-2 mt-3">
-              <button class="btn btn-primary" type="submit">Login</button>
+              <button class="btn btn-primary" type="submit" (click)="goBack()">Login</button>
             </div>
             <div class="cold-md-12 login">
               <span>Have'nt an account ?</span

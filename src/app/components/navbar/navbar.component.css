@@ -28,11 +28,12 @@ nav ul#barMenu li a {
   color: #F5F5F5;
   transition: .5s;
   padding: 7px 10px;
+  cursor: pointer;
 }
 nav ul#barMenu li a:hover {
   color: #EC255A;
 }
-nav ul#barMenu li a span.login, span.registrasi {
+nav ul#barMenu li a span.login, span.logout, span.registrasi {
   margin-left: 5px;
 }
 nav label#bars {
@@ -62,11 +63,12 @@ nav ul#hiddenMenu li a {
   color: #F5F5F5;
   transition: .5s all;
   padding: 7px 10px;
+  cursor: pointer;
 }
 nav ul#hiddenMenu li a:hover {
   color: #EC255A;
 }
-nav ul#hiddenMenu li a span.login, span.registrasi {
+nav ul#hiddenMenu li a span.login, span.logout, span.registrasi {
   margin-left: 5px;
 }
 

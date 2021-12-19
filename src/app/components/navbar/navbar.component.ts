@@ -1,20 +1,53 @@
-import { Component, OnInit } from '@angular/core';
-import { faBars, faCartPlus, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  faBars,
+  faCartPlus,
+  faSignInAlt,
+  faUserPlus,
+} from '@fortawesome/free-solid-svg-icons';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
   cart = faCartPlus;
   login = faSignInAlt;
   registrasi = faUserPlus;
   bars = faBars;
   isDisplayHidden = false;
+  userIsAuthenticated = false;
+  authListenerSubscription!: Subscription;
 
-  constructor() { }
+  constructor(private authService: AuthService, private localstorage : LocalStorageService) {}
 
   ngOnInit(): void {
+  
+    const token = this.localstorage.getToken()
+    console.log("Token", token)
+    if(token !== null){
+      this.userIsAuthenticated = true;
+    } else {
+      this.userIsAuthenticated = false;
+    }
+    this.authListenerSubscription = this.authService
+      .getAuthStatusListener()
+      .subscribe((isAuthenticated) => {
+        this.userIsAuthenticated = isAuthenticated;
+      });
+  }
+
+  isLogout(){
+    this.authService.logout()
+    
+  }
+
+  ngOnDestroy() {
+    this.authListenerSubscription.unsubscribe();
   }
 
   isShow(): any {
@@ -28,5 +61,4 @@ export class NavbarComponent implements OnInit {
   menuColapse(): any {
     this.isDisplayHidden = false;
   }
-
 }
