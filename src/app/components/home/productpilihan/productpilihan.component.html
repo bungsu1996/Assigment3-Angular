@@ -4,14 +4,25 @@
 
 <div class="container">
   <div class="row">
-    <div class="card" style="width: 13rem" *ngFor="let item of itemProduct">
-      <img src="{{ item.image }}" class="card-img-top" alt="" />
+    <div
+      class="card"
+      style="width: 13rem"
+      *ngFor="let products of productPilihan"
+    >
+      <img
+        src="{{ products.Foto_Item }}"
+        class="card-img-top"
+        alt="Item Product Image"
+      />
       <div class="card-body">
-        <h3 class="card-title"><b>{{ item.title }}</b></h3>
-        <h5 class="card-text">
-          {{ item.price | currency: "IDR " }}
-        </h5>
-        <a href="#" class="btn btn-primary">+ Keranjang</a>
+        <h3 class="card-title p-1" style="height: 3rem">
+          <a class="title-link">{{ products.Nama_Item }}</a>
+        </h3>
+        <h5 class="card-text">{{ products.Harga_Item | currency: "IDR "}}</h5>
+        <a routerLink class="btn btn-primary detail">+ Keranjang</a>
+        <a routerLink="/albarrmart/detailProduct" class="btn btn-primary"
+          >Lihat Detail</a
+        >
       </div>
     </div>
   </div>

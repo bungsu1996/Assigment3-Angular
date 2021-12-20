@@ -8,14 +8,29 @@ h1 {
   margin-left: 10px;
   margin-top: 10px;
 }
-.container .row .card .card-body a {
-  font-size: 12px;
-  float: right;
+.container .row .card {
+  box-shadow: 1px 1px 1px black;
+  margin: 10px auto;
 }
-.container .row .card .card-body a {
-  background-color: #14279B;
+.container .row .card .card-body h3 {
+  text-align: center;
+}
+.container .row .card .card-body h3 .title-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+.container .row .card .card-body h5 {
+  text-align: center;
+}
+.container .row .card .card-body .btn {
+  background-color: #14279b;
   border: none;
+  font-size: 13px;
+  padding: 5px;
+  float: right;
+  margin: 5px 5px 10px 0;
 }
-.container .row .card .card-body a:hover {
-  background-color: #5C7AEA;
+.container .row .card .card-body .btn:hover {
+  background-color: #5c7aea;
 }
