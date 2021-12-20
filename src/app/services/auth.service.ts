@@ -6,7 +6,6 @@ import { environment } from 'src/environments/environment';
 import { AuthData } from './auth.interface';
 import { LocalStorageService } from './local-storage.service';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -18,8 +17,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private localstorage: LocalStorageService,
-
+    private localstorage: LocalStorageService
   ) {}
 
   isAuthenticated() {
@@ -53,7 +51,7 @@ export class AuthService {
           this.loggedIn = true;
           this.authStatusListener.next(true);
           this.localstorage.setToken(res.token);
-          // this.router.navigate(['/albarrmart/home']);
+          this.router.navigate(['/albarrmart/home']);
         },
         (error) => {
           this.authStatusListener.next(false);

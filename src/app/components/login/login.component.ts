@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
-import { NgxSpinnerService } from "ngx-spinner"
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,11 @@ export class LoginComponent implements OnInit {
   faKey = faKey;
   userIsAuthenticated = false;
 
-  constructor(private authService: AuthService, private location: Location, private spinner: NgxSpinnerService) {}
+  constructor(
+    private authService: AuthService,
+    private location: Location,
+    private spinner: NgxSpinnerService
+  ) {}
 
   ngOnInit(): void {
     this.spinner.show();
@@ -23,8 +27,8 @@ export class LoginComponent implements OnInit {
       this.spinner.hide();
     }, 3000);
     this.authService.getAuthStatusListener().subscribe((isAuthenticated) => {
-      this.userIsAuthenticated = isAuthenticated
-    })
+      this.userIsAuthenticated = isAuthenticated;
+    });
   }
 
   onLogin(form: NgForm) {
@@ -34,9 +38,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(form.value.Email, form.value.Password);
   }
 
-  goBack(): void{
+  goBack(): void {
     this.location.back();
   }
-
-
 }

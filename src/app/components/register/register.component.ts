@@ -1,7 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { faEnvelope, faKey, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { RegisterData } from './register.interface';
+import { RegisterService } from './register.service';
 
 @Component({
   selector: 'app-register',
@@ -14,22 +22,30 @@ export class RegisterComponent implements OnInit {
   faUser = faUser;
   register!: FormGroup;
   forbiddenEmails = ['@test.com', '123@gmail.com', ''];
+  registerData: RegisterData[] = [];
 
-  constructor(private registerBuilder: FormBuilder) {}
+  constructor(
+    private registerBuilder: FormBuilder,
+    private spinner: NgxSpinnerService,
+    private registerService: RegisterService
+  ) {}
 
   ngOnInit(): void {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
     this.register = this.registerBuilder.group({
       username: [null, Validators.required],
-      email: [null, [
-        Validators.required,
-        Validators.email,
-        this.forbiddenEmail.bind(this),
-      ]],
-      password: [null, [
-        Validators.required,
-        Validators.minLength(8),
-      ]],
+      email: [
+        null,
+        [Validators.required, Validators.email, this.forbiddenEmail.bind(this)],
+      ],
+      password: [null, [Validators.required, Validators.minLength(8)]],
     });
+    // this.registerService.register.subscribe((data) => {
+    //   this.registerData = data;
+    // })
   }
 
   isSubmit() {
@@ -43,5 +59,4 @@ export class RegisterComponent implements OnInit {
       return null;
     }
   }
-
 }
