@@ -36,8 +36,9 @@
 input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
-.container-fluid .row .box-rgs .set-1 .box-regs .form-floating span {
-  font-size: 13px;
+.container-fluid .row .box-rgs .set-1 .box-regs .form-group span {
+  font-size: 10px;
+  color: red;
   margin-left: 5px;
 }
 .container-fluid .row .box-rgs .set-1 .box-regs .d-grid .btn {
@@ -47,18 +48,18 @@ input.ng-invalid.ng-touched {
 .container-fluid .row .box-rgs .set-1 .box-regs .d-grid .btn:hover {
   background-color: #5C7AEA;
 }
-.container-fluid .row .box-rgs .set-1 .box-regs form .register {
+.container-fluid .row .box-rgs .set-1 .box-regs form .login {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-.container-fluid .row .box-rgs .set-1 .box-regs form .register span {
+.container-fluid .row .box-rgs .set-1 .box-regs form .login span {
   font-size: 13px;
 }
-.container-fluid .row .box-rgs .set-1 .box-regs .register a {
+.container-fluid .row .box-rgs .set-1 .box-regs .login a {
   color: #14279B;
   font-size: 13px;
 }
-.container-fluid .row .box-rgs .set-1 .box-regs .register a:hover {
+.container-fluid .row .box-rgs .set-1 .box-regs .login a:hover {
   color: #5C7AEA;
 }
 .container-fluid .row .box-rgs .set-1 .box-regs .about {

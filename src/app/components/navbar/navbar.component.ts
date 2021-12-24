@@ -8,6 +8,8 @@ import {
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -23,13 +25,17 @@ export class NavbarComponent implements OnInit, OnDestroy {
   userIsAuthenticated = false;
   authListenerSubscription!: Subscription;
 
-  constructor(private authService: AuthService, private localstorage : LocalStorageService) {}
+  constructor(
+    private authService: AuthService,
+    private localstorage: LocalStorageService,
+    private spinner: NgxSpinnerService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-  
-    const token = this.localstorage.getToken()
-    console.log("Token", token)
-    if(token !== null){
+    const token = this.localstorage.getToken();
+    console.log('Token', token);
+    if (token !== null) {
       this.userIsAuthenticated = true;
     } else {
       this.userIsAuthenticated = false;
@@ -41,9 +47,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
       });
   }
 
-  isLogout(){
-    this.authService.logout()
-    
+  isLogout() {
+    this.authService.logout();
+    this.userIsAuthenticated = false;
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
+    this.router.navigate(['/albarrmart/home']);
   }
 
   ngOnDestroy() {

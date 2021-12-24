@@ -23,6 +23,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { DetailproductComponent } from './components/product/detailproduct/detailproduct.component';
+import { AngularMaterialModule } from './angular-materiial.module';
 
 @NgModule({
   declarations: [
@@ -50,14 +51,15 @@ import { DetailproductComponent } from './components/product/detailproduct/detai
     FontAwesomeModule,
     NgbModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    AngularMaterialModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
       multi: true,
-    },
+    }
   ],
   bootstrap: [AppComponent],
 })

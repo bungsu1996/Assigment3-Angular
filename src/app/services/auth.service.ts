@@ -1,24 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { AuthData } from './auth.interface';
+import { AuthData } from '../models/auth.interface';
 import { LocalStorageService } from './local-storage.service';
-
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  loggedIn = false;
-  token = '';
-  authStatusListener = new Subject<boolean>();
+  private loggedIn = false;
+  private token!: string;
+  private userId!: string;
+  private authStatusListener = new Subject<boolean>();
 
   constructor(
     private http: HttpClient,
     private router: Router,
     private localstorage: LocalStorageService
-  ) {}
+  ) { }
 
   isAuthenticated() {
     const promise: any = new Promise((resolve, reject) => {
@@ -33,8 +33,12 @@ export class AuthService {
     return this.authStatusListener.asObservable();
   }
 
-  getToken() {
+  getToken(): any {
     return this.token;
+  }
+
+  getUserId(): any {
+    return this.userId;
   }
 
   login(Email: string, Password: string) {
@@ -62,6 +66,5 @@ export class AuthService {
   logout() {
     this.loggedIn = false;
     this.localstorage.deleteToken();
-    this.router.navigate(['/albarrmart/login']);
   }
 }

@@ -14,22 +14,23 @@
           <h1><span>Al Barr Mart</span> Register</h1>
         </div>
         <div class="box-regs">
-          <form [formGroup]="register" (ngSubmit)="isSubmit()">
+          <form [formGroup]="register">
             <div class="form-floating mb-3 form-group">
               <input
                 type="email"
                 class="form-control"
                 id="username"
-                placeholder="name@example.com"
-                formControlName="username"
+                formControlName="Username"
+                name="Username"
+                required
               />
               <label for="floatingInput"
                 ><fa-icon [icon]="faUser" class="mrgn"></fa-icon>Username</label
               >
               <span
                 *ngIf="
-                  !register.get('username')?.valid &&
-                  register.get('username')?.touched
+                  !register.get('Username')?.valid &&
+                  register.get('Username')?.touched
                 "
                 >Please enter a valid username!</span
               >
@@ -39,8 +40,9 @@
                 type="email"
                 class="form-control"
                 id="email"
-                placeholder="name@example.com"
-                formControlName="email"
+                formControlName="Email"
+                name="Email"
+                required
               />
               <label for="floatingInput"
                 ><fa-icon [icon]="faEnvelope" class="mrgn"></fa-icon>Email
@@ -48,8 +50,8 @@
               >
               <span
                 *ngIf="
-                  !register.get('email')?.valid &&
-                  register.get('email')?.touched
+                  !register.get('Email')?.valid &&
+                  register.get('Email')?.touched
                 "
                 >Please enter a valid email!</span
               >
@@ -59,24 +61,31 @@
                 type="password"
                 class="form-control"
                 id="password"
-                placeholder="Password"
-                formControlName="password"
+                formControlName="Password"
+                name="Password"
+                required
               />
               <label for="floatingPassword"
                 ><fa-icon [icon]="faKey" class="mrgn"></fa-icon>Password</label
               >
               <span
                 *ngIf="
-                  !register.get('password')?.valid &&
-                  register.get('password')?.touched
+                  !register.get('Password')?.valid &&
+                  register.get('Password')?.touched
                 "
                 >Password must be less than 8 character!</span
               >
             </div>
             <div class="d-grid gap-2 mt-3">
-              <button class="btn btn-primary" type="submit">Register</button>
+              <button
+                class="btn btn-primary"
+                type="submit"
+                (click)="onSubmit()"
+              >
+                Register
+              </button>
             </div>
-            <div class="cold-md-12 register">
+            <div class="cold-md-12 login">
               <span>Have already an account ?</span
               ><a routerLink="/albarrmart/login" routerLinkActive="active">
                 Login Here</a

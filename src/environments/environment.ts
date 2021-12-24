@@ -11,6 +11,8 @@ export const environment = {
     'https://backendass3.herokuapp.com/albarrmart/listItem/productpilihan2',
   basedUrlBackendProductPilihan2:
     'https://backendass3.herokuapp.com/albarrmart/listItem/productpilihan',
+  basedUrlBackendDetailProduct:
+    'https://backendass3.herokuapp.com/albarrmart/detailItem/',
 };
 
 /*

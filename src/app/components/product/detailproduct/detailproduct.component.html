@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+<ng-template #noProduct> </ng-template>
 <div class="container-fluid set">
   <div class="col-md-4">
     <h1 class="h1">Detail Product</h1>
@@ -8,30 +9,34 @@
     <div class="row">
       <div class="col-md-5">
         <img
-        src="../../../../assets/image/product/idm-1.png"
-        class="img-fluid"
-        style="height: 300px"
-        alt="Cart Empty Image"
-      />
+          src="{{ product.Foto_Item }}"
+          class="img-fluid"
+          style="height: 300px"
+          alt="Cart Empty Image"
+        />
       </div>
+
       <div class="col-md-6">
-        <table style="width:100%">
+        <table>
           <tr>
-            <th>Nama Product :</th>
-            <td>Indomie Ayam Bawang</td>
+            <th>Nama Product</th>
+            <td>:</td>
+            <td>{{ product.Nama_Item }}</td>
           </tr>
           <tr>
-            <th>Harga Product :</th>
-            <td>Rp. 3.000</td>
+            <th>Harga Product</th>
+            <td>:</td>
+            <td>{{ product.Harga_Item | currency: "IDR " }}</td>
           </tr>
           <tr>
-            <th>Stock Product :</th>
-            <td>12</td>
+            <th>Stock Product</th>
+            <td>:</td>
+            <td>{{ product.Stock_Item }}</td>
           </tr>
-          <tr>
+          <!-- <tr>
             <th>Deskripsi Product :</th>
             <td>Cocok untuk dimasak di malam hari</td>
-          </tr>
+          </tr> -->
         </table>
       </div>
     </div>

@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'albarrmart/keranjang', component: KeranjangComponent },
   { path: 'albarrmart/login', component: LoginComponent },
   { path: 'albarrmart/register', component: RegisterComponent },
-  { path: 'albarrmart/detailProduct', component: DetailproductComponent },
+  { path: 'albarrmart/detailProduct/:id', component: DetailproductComponent },
   { path: '**', component: PagenotFoundComponent },
 ];
 
