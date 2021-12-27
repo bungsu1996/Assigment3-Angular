@@ -9,9 +9,12 @@
       <a routerLink="/albarrmart/about" routerLinkActive="active">About</a>
     </li>
     <li *ngIf="userIsAuthenticated">
-      <a routerLink="/albarrmart/keranjang" routerLinkActive="active"
-        ><fa-icon [icon]="cart" class="cart"></fa-icon
-      ></a>
+      <a routerLink="/albarrmart/keranjang"
+        ><fa-icon [icon]="cart" class="cart"></fa-icon>
+        <div class="badge bg-danger" style="font-size: 8px">
+          {{ totalItem }}
+        </div></a
+      >
     </li>
     <li *ngIf="!userIsAuthenticated">
       <a routerLink="/albarrmart/login" routerLinkActive="active"

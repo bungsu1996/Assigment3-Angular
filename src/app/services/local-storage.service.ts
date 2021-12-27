@@ -16,4 +16,7 @@ export class LocalStorageService {
   deleteToken(){
     localStorage.removeItem('token')
   }
+  getCartItem(){
+    return localStorage.getItem('keranjang')
+  }
 }

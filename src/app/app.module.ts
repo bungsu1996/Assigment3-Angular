@@ -24,6 +24,7 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { DetailproductComponent } from './components/product/detailproduct/detailproduct.component';
 import { AngularMaterialModule } from './angular-materiial.module';
+import { KeranjangService } from './components/keranjang/keranjang.service';
 
 @NgModule({
   declarations: [
@@ -63,4 +64,8 @@ import { AngularMaterialModule } from './angular-materiial.module';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { 
+  constructor(private keranjangService: KeranjangService) {
+    this.keranjangService.inisialisasi();
+  }
+}

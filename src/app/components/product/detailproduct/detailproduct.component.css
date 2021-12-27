@@ -7,9 +7,6 @@
   position: absolute;
   top: 90px;
 }
-.brdr {
-  border: 1px solid;
-}
 .container-fluid .col-md-4 {
   margin: 0 auto;
   padding: 10px;
@@ -22,6 +19,9 @@
   border-radius: 20px;
   background-color: #5C7AEA;
   color: white;
+}
+mat-spinner {
+  margin: auto;
 }
 .container-fluid .img-cart {
   margin: 0 auto;

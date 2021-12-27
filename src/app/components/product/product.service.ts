@@ -23,23 +23,5 @@ export class ProductService {
     return this.http.get<Product>(this.URLdetailProduct + Id_Item)
   }
 
-  // getProductById(Id_Item: any): Observable<Product> {
-  //   return this.getProducts().pipe(
-  //     flatMap((result) => result),
-  //     first((product) => product.Id_Item == Id_Item)
-  //   );
-  // }
-
-  // getProductById(id: any): Observable<Product> {
-  //   return this.http.get<Product>(`${environment.basedUrlBackendDetailProduct}`).pipe(
-  //     flatMap((result) => result),
-  //     first((product) => product.Id_Item == id)
-  //   );
-  // }
-
-  // getDetailProduct(id: string): Observable<ProductDetail[]> {
-  //   return this.http.get<ProductDetail[]>(
-  //     `${environment.basedUrlBackendDetailProduct}` + id
-  //   );
-  // }
+ 
 }

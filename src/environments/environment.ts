@@ -13,6 +13,8 @@ export const environment = {
     'https://backendass3.herokuapp.com/albarrmart/listItem/productpilihan',
   basedUrlBackendDetailProduct:
     'https://backendass3.herokuapp.com/albarrmart/detailItem/',
+  basedUrlBAckendCart:
+    'https://backendass3.herokuapp.com/albarrmart/masukkanKeranjang',
 };
 
 /*

@@ -1,13 +1,13 @@
 <app-navbar></app-navbar>
-<ng-template #noProduct> </ng-template>
 <div class="container-fluid set">
   <div class="col-md-4">
     <h1 class="h1">Detail Product</h1>
   </div>
 
   <div class="col-md-6 img-cart border">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-5" *ngIf="!isLoading">
         <img
           src="{{ product.Foto_Item }}"
           class="img-fluid"
@@ -16,7 +16,7 @@
         />
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6" *ngIf="!isLoading">
         <table>
           <tr>
             <th>Nama Product</th>
@@ -33,10 +33,6 @@
             <td>:</td>
             <td>{{ product.Stock_Item }}</td>
           </tr>
-          <!-- <tr>
-            <th>Deskripsi Product :</th>
-            <td>Cocok untuk dimasak di malam hari</td>
-          </tr> -->
         </table>
       </div>
     </div>

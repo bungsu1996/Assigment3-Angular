@@ -24,7 +24,7 @@
             <a class="title-link">{{ product.Nama_Item }}</a>
           </h3>
           <h5 class="card-text">{{ product.Harga_Item | currency: "IDR " }}</h5>
-          <a routerLink class="btn btn-primary detail">+ Keranjang</a>
+          <a class="btn btn-primary detail" (click)="addCart(product)">+ Keranjang</a>
           <a class="btn btn-primary" (click)="onSelect(product)">Lihat Detail</a>
         </div>
       </div>

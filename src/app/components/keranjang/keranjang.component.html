@@ -7,15 +7,81 @@
   <p style="font-size: 15px; color: white">Loading To Cartpage..</p>
 </ngx-spinner>
 <app-navbar></app-navbar>
-<div class="container-fluid brdr set">
-  <div class="col-md-4">
-    <h1 class="h1">Keranjang</h1>
+
+<ng-container *ngIf="products.length != 0">
+  <div class="container-fluid set">
+    <div class="container border margin">
+      <div class="card-table">
+        <div class="cart-product">
+          <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Product Name</th>
+                <th>Product Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ product.Nama_Item }}</td>
+                <td>
+                  <img src="{{ product.Foto_Item }}" style="width: 120px" />
+                </td>
+                <td>{{ product.Harga_Item }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{product.Harga_Item*product.quantity | currency: "IDR "}}</td>
+                <td>
+                  <button
+                    (click)="removeProduct(product)"
+                    class="btn btn-danger"
+                    style="width: 40px"
+                  >
+                    <fa-icon [icon]="trash"></fa-icon>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td><button class="btn btn-danger" style="width: 80px; font-size: 13px;" (click)="emptyCart()">Empty Cart</button></td>
+                <td><button class="btn btn-success" style="width: 80px; font-size: 13px;">Check Out</button></td>
+                <td><strong>Total All Price</strong></td>
+                <td>
+                  {{ grandTotal | currency: "IDR "}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-md-6 img-cart">
-    <img src="../../../assets/image/cart-empty.PNG" class="img-fluid w-100" alt="Cart Empty Image">
+</ng-container>
+
+<ng-container *ngIf="products.length == 0">
+  <div class="container-fluid brdr set">
+    <div class="col-md-4">
+      <h1 class="h1">Keranjang</h1>
+    </div>
+    <div class="col-md-6 img-cart">
+      <img
+        src="../../../assets/image/cart-empty.PNG"
+        class="img-fluid w-100"
+        alt="Cart Empty Image"
+      />
+    </div>
+    <div class="col-md-6 title-cart">
+      <h2 class="h2">Wah, Keranjangmu Kosong..</h2>
+      <p>Yu kita isi dengan mulai berbelanja sesuai barang yang kamu mau..</p>
+    </div>
   </div>
-  <div class="col-md-6 title-cart">
-    <h2 class="h2">Wah, Keranjangmu Kosong..</h2>
-    <p>Yu kita isi dengan mulai berbelanja sesuai barang yang kamu mau..</p>
-  </div>
-</div>
+</ng-container>
+
+
+
+
